@@ -1,0 +1,17 @@
+# Arquivos SSH sensíveis
+authorized_keys
+
+# Diretório SSH (se usado)
+.ssh/
+
+# Logs e cache
+*.log
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

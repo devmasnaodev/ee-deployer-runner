@@ -1,0 +1,24 @@
+# /etc/ssh/sshd_config
+
+# Porta que o SSH vai ouvir (ainda mapeada pelo docker-compose)
+Port 22
+
+# Permitir login por chave pública
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Permitir senha só se quiser fallback
+PasswordAuthentication no
+AllowUsers www-data
+X11Forwarding no
+AllowTcpForwarding no
+
+# Evitar problemas de host key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+
+# Outros ajustes úteis
+PermitRootLogin no
+ChallengeResponseAuthentication no
+UsePAM yes

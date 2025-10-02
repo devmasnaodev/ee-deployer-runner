@@ -1,0 +1,43 @@
+# === ARQUIVOS DE DOCUMENTAÇÃO ===
+README.md
+LICENSE
+*.md
+
+# === CONFIGURAÇÃO DE DESENVOLVIMENTO ===
+.env.example
+.gitignore
+.cz.toml
+
+# NOTA: .env é incluído propositalmente para configurações padrão
+# Se contiver informações sensíveis, adicione .env aqui também
+
+# === CONTROLE DE VERSÃO ===
+.git/
+.gitattributes
+
+# === DOCKER COMPOSE (não necessário na imagem) ===
+docker-compose*.yml
+
+# === SCRIPTS AUXILIARES ===
+manage-files.sh
+
+# === ARQUIVOS TEMPORÁRIOS E BACKUP ===
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+*.log
+.cache/
+.tmp/
+
+# === ARQUIVOS DO SISTEMA OPERACIONAL ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === IDEs E EDITORES ===
+.vscode/
+
+# === DEPENDÊNCIAS E CACHE ===
+node_modules/

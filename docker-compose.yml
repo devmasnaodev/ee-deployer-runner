@@ -1,0 +1,14 @@
+services:
+  runner:
+    build: ./
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    restart: on-failure
+    environment:
+      - SSH_PORT=${SSH_PORT}
+      - CONTAINER_NAME=${CONTAINER_NAME}
+    ##volumes:
+      ## Volume do site EasyEngine
+      # - /opt/easyengine/sites/<site_path>/app/:/var/www/<site_path>
+    ports:
+      - "${SSH_PORT}:22"
