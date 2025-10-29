@@ -2,8 +2,13 @@ FROM php:8.4-cli
 
 # Instala dependências
 RUN apt-get update && apt-get install -y \
-    git unzip zip less mariadb-client rsync curl openssh-server \
+    git unzip zip less mariadb-client rsync curl openssh-server vim \
     && rm -rf /var/lib/apt/lists/*
+
+# Instalar e habilitar extensões PHP necessárias para WordPress (mysqli e pdo_mysql)
+# Isso permite que o WP-CLI (php CLI) se conecte ao banco de dados
+RUN docker-php-ext-install mysqli pdo pdo_mysql || \
+    { echo "Failed to install mysqli/pdo_mysql via docker-php-ext-install"; exit 1; }
 
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

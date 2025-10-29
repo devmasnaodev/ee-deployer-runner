@@ -12,3 +12,9 @@ services:
       # - /opt/easyengine/sites/<site_path>/app/:/var/www/<site_path>
     ports:
       - "${SSH_PORT}:22"
+    networks:
+      - ee-global-backend-network
+
+networks:
+  ee-global-backend-network:
+    external: true
